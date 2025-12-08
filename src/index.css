@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@300;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #99bde2;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: #2c3e50;
+  line-height: 1.6;
+  padding: 3%;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-size: clamp(18px, 4vw, 100px);
+  background-color: transparent;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  background-color: transparent;
+}
