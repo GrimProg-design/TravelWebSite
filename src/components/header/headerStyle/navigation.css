@@ -1,6 +1,69 @@
 nav {
-    width: 70%;
-    display: flex;
-    justify-content: space-around;
-    background-color: transparent;
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  background-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+  color: white;
+}
+
+a:hover {
+  -webkit-animation: blue-neon 0.8s ease-in-out infinite alternate;
+  -moz-animation: blue-neon 0.8s ease-in-out infinite alternate;
+  animation: blue-neon 0.8s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes blue-neon {
+  from {
+    text-shadow: 
+      0 0 1px #fff,
+      0 0 5px #00aaff,
+      0 0 10px #00bbff,
+      0 0 15px #00ffff;
+  }
+  to {
+    text-shadow: 
+      0 0 2px #fff, 
+      0 0 7px #33ccff, 
+      0 0 12px #66ffff, 
+      0 0 17px #00ffff;
+  }
+}
+
+@-moz-keyframes blue-neon {
+  from {
+    text-shadow: 
+      0 0 1px #fff,    
+      0 0 5px #00aaff,  
+      0 0 10px #00bbff, 
+      0 0 15px #00ffff;
+  }
+  to {
+    text-shadow: 
+      0 0 2px #fff, 
+      0 0 7px #33ccff, 
+      0 0 12px #66ffff, 
+      0 0 17px #00ffff;
+  }
+}
+
+@keyframes blue-neon {
+  from {
+    text-shadow: 
+      0 0 1px #fff,    
+      0 0 5px #00aaff,  
+      0 0 10px #00bbff, 
+      0 0 15px #00ffff;
+  }
+  to {
+    text-shadow: 
+      0 0 2px #fff, 
+      0 0 7px #33ccff, 
+      0 0 12px #66ffff, 
+      0 0 17px #00ffff;
+  }
 }

@@ -7,8 +7,8 @@ export default function Header(): JSX.Element {
   return (
     <header className="header-con">
       <h1>Tour.KG</h1>
-      <Navigation/>
-      <BurgerMenu/>
+      <Navigation />
+      <BurgerMenu />
     </header>
   );
 }
