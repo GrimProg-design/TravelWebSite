@@ -1,17 +1,25 @@
+/* В Header.css */
 .header-con {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 30px;
-  padding: 0 20px 0 20px;
+  padding: 15px 40px;
 
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
+.header-con > h1 {
+  color: #fff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  font-size: 1.8em;
+  font-weight: 700;
+}
 .burger-menu {
   display: flex;
   justify-content: center;
