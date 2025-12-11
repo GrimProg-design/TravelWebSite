@@ -1,0 +1,71 @@
+.home-main {
+    padding-top: 50px;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    max-width: 94%;
+    margin: 0 auto;
+}
+
+.hero-section {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: 
+        linear-gradient(to right, rgba(10, 25, 47, 0.95) 40%, rgba(10, 25, 47, 0.6) 70%, rgba(10, 25, 47, 0.2) 100%),
+        url('../../../assets/licensed-image.jpeg') no-repeat center center / cover;
+    min-height: 600px;
+    border-radius: 30px;
+}
+
+.hero-content {
+    max-width: 55%;
+    color: #e6f1ff;
+    background-color: transparent;
+}
+
+.hero-title {
+    font-size: 3.5em;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title .highlight {
+    color: #4dc2f7;
+    background-color: transparent;
+}
+
+.hero-description {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    opacity: 0.85;
+}
+
+.cta-button {
+    background-color: #4dc2f7;
+    color: #0a192f;
+    font-weight: 700;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #27aee3;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(77, 194, 247, 0.4);
+}
+
+.booking-sidebar-con {
+    max-width: 40%;
+}

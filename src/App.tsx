@@ -6,6 +6,7 @@ import Home from "./components/body/home/Home";
 import Places from "./components/body/places/Places";
 import Status from "./components/body/status/Status";
 import Tickets from "./components/body/tickets/Tickets";
+import Footer from "./components/footer/Footer";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/bilets" element={<Tickets/>}/>
         <Route path="/places" element={<Places/>}/>
       </Routes>
+      <Footer/>
     </>
   );
 }

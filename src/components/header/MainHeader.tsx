@@ -1,7 +1,7 @@
 import type { JSX } from "react";
 import "./Header.css";
-import Navigation from "./headerComponent/navigation";
-import BurgerMenu from "./headerComponent/burgerMenu";
+import Navigation from "./headerComponent/Navigation";
+import BurgerMenu from "./headerComponent/BurgerMenu";
 
 export default function Header(): JSX.Element {
   return (
