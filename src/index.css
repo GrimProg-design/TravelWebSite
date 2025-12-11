@@ -16,6 +16,7 @@ body {
     radial-gradient(ellipse at bottom right, rgba(247, 169, 77, 0.1) 0%, transparent 50%), /* Легкий оранжевый градиент */
     #0a192f;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {

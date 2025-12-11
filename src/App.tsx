@@ -1,6 +1,8 @@
 import "./App.css";
 import Header from "./components/header/MainHeader";
 import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import MenuSidebar from "./components/header/headerComponent/MenuSidebar";
 
 import Home from "./components/body/home/Home";
 import Places from "./components/body/places/Places";
@@ -10,9 +12,11 @@ import Footer from "./components/footer/Footer";
 
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   return (
     <>
-      <Header />
+      <Header toggleMenu={toggleMenu}/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/status" element={<Status/>}/>
@@ -20,6 +24,10 @@ function App() {
         <Route path="/places" element={<Places/>}/>
       </Routes>
       <Footer/>
+      <MenuSidebar 
+          isOpen={isMenuOpen} 
+          onClose={toggleMenu} 
+      />
     </>
   );
 }

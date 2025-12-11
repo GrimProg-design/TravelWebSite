@@ -3,12 +3,12 @@ import "./Header.css";
 import Navigation from "./headerComponent/Navigation";
 import BurgerMenu from "./headerComponent/BurgerMenu";
 
-export default function Header(): JSX.Element {
+export default function Header({ toggleMenu }: { toggleMenu: () => void }): JSX.Element {
   return (
     <header className="header-con">
       <h1>Tour.KG</h1>
       <Navigation />
-      <BurgerMenu />
+      <BurgerMenu toggleMenu={toggleMenu} /> 
     </header>
   );
 }

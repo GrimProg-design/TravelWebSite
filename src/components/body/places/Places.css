@@ -1,0 +1,82 @@
+.places-page-con {
+    padding: 50px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.page-title {
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #fff;
+    text-align: center;
+}
+
+.top-section-layout {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    margin-bottom: 60px;
+}
+
+.globe-container {
+    flex: 0 0 450px;
+    height: 450px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.globe-hint {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #e6e6e6;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.highlight-hint {
+    color: #4dc2f7;
+    font-weight: 700;
+}
+
+.filter-and-intro {
+    flex: 1;
+}
+
+.section-intro-title {
+    font-size: 1.8em;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #e6e6e6;
+    line-height: 1.6;
+    font-size: 1em;
+}
+
+.tour-grid-section {
+    padding-top: 20px;
+}
+
+.section-header {
+    color: #f7a94d;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+}
+
+.tour-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}

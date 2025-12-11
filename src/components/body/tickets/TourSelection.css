@@ -1,0 +1,51 @@
+/* В Tickets.css или TourSelection.css */
+
+.tour-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.tour-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 15px;
+    
+    /* Упрощенный Glassmorphism для карточки тура */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.tour-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tour-name {
+    font-size: 1.4em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.tour-price {
+    font-size: 1em;
+    color: #e6e6e6;
+    margin-bottom: 20px;
+}
+
+.price-value {
+    color: #f7a94d; /* Золотой акцент */
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.hint-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9em;
+    margin-top: 20px;
+}

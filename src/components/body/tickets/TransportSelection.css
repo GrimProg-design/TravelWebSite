@@ -1,0 +1,62 @@
+/* В Tickets.css или TransportSelection.css */
+
+.tour-summary {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #e6e6e6;
+}
+
+.highlight-summary {
+    color: #f7a94d;
+    font-weight: 700;
+}
+
+.transport-options {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.transport-option {
+    width: 250px;
+    padding: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    text-align: center;
+    
+    /* Стили Glassmorphism */
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.transport-option:hover {
+    transform: translateY(-5px);
+    background: rgba(77, 194, 247, 0.1); /* Легкий синий акцент при наведении */
+    border: 1px solid #4dc2f7;
+}
+
+.transport-option .icon {
+    font-size: 3em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.transport-option h4 {
+    font-size: 1.5em;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.transport-option p {
+    color: #e6e6e6;
+    font-size: 0.9em;
+}
+
+.warning-text {
+    color: rgba(247, 169, 77, 0.8);
+    font-size: 0.9em;
+    font-weight: 500;
+}

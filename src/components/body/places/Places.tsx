@@ -1,49 +1,63 @@
-import { useEffect, useRef } from "react";
-import WorldWind from "worldwindjs";
+import type { JSX } from "react";
+import RotatingGlobe from "./RotatingGlobe"; 
+import TourCard from "./TourCard";
+import CategoryFilter from "./CategoryFilter";
+import { useState } from "react";
 
-export default function RotatingGlobe() {
-  const globeRef = useRef<HTMLCanvasElement | null>(null);
+import "./Places.css"
 
-  useEffect(() => {
-    if (!globeRef.current) return;
+const tourData = [
+    { id: 'kg1', name: 'Иссык-Куль: Жемчужина Тянь-Шаня', category: 'kyrgyzstan', description: 'Самое большое и красивое озеро. Идеально для летнего отдыха.', imageUrl: 'issyk_kul.jpg' },
+    { id: 'kg2', name: 'Ущелье Ала-Арча: Альпийские Луга', category: 'kyrgyzstan', description: 'Высокогорный национальный парк, доступный из Бишкека.', imageUrl: 'ala_archa.jpg' },
+    { id: 'w1', name: 'Мачу-Пикчу: Город Инков', category: 'world', description: 'Исторический памятник, затерянный в облаках Анд.', imageUrl: 'machu_picchu.jpg' },
+    { id: 'w2', name: 'Исландия: Северное Сияние', category: 'world', description: 'Путешествие по вулканам, гейзерам и ледникам.', imageUrl: 'iceland.jpg' },
+];
 
-    requestAnimationFrame(() => {
-      WorldWind.configuration.baseUrl = "/worldwind/";
-      const wwd = new WorldWind.WorldWindow(globeRef.current);
+export default function Places(): JSX.Element {
+    const [filter, setFilter] = useState<'all' | 'kyrgyzstan' | 'world'>('all');
+    
+    const filteredTours = tourData.filter(tour => 
+        filter === 'all' ? true : tour.category === filter
+    );
 
-      wwd.addLayer(new WorldWind.BMNGLayer());
-      wwd.addLayer(new WorldWind.CompassLayer());
-      wwd.addLayer(new WorldWind.ViewControlsLayer(wwd));
+    return (
+        <div className="places-page-con">
+            <h2 className="page-title">Наши Направления</h2>
 
-      wwd.navigator.range = 14_000_000;
+            <div className="top-section-layout">
+                
+                <div className="globe-container">
+                    <RotatingGlobe /> 
+                    <p className="globe-hint">
+                        <span className="highlight-hint">🌎</span> 
+                        Мини-карта показывает направления туров.
+                    </p>
+                </div>
 
-      let longitude = 0;
+                <div className="filter-and-intro">
+                    <h3 className="section-intro-title">Откройте для себя свое следующее приключение</h3>
+                    
+                    <CategoryFilter currentFilter={filter} setFilter={setFilter} />
+                    
+                    <p className="intro-text status-card-glass-mini">
+                        Мы предлагаем лучшие маршруты как по сердцу Тянь-Шаня, так и по самым живописным уголкам планеты, чтобы вы могли удобно расширять свое путешествие.
+                    </p>
+                </div>
+            </div>
 
-      function rotate() {
-        longitude += 0.3;
-        if (longitude > 180) longitude -= 360;
-
-        wwd.navigator.lookAtLocation.latitude = 0;
-        wwd.navigator.lookAtLocation.longitude = longitude;
-
-        wwd.redraw();
-        requestAnimationFrame(rotate);
-      }
-
-      rotate();
-
-      return () => {
-        wwd.canvas.remove();
-      };
-    });
-  }, []);
-
-  return (
-    <div style={{ width: "20%", height: "20vh", position: "relative" }}>
-      <canvas
-        ref={globeRef}
-        style={{ width: "100%", height: "100%", display: "block" }}
-      />
-    </div>
-  );
+            <div className="tour-grid-section">
+                <h3 className="section-header">{filter === 'kyrgyzstan' ? 'Туры по Кыргызстану' : filter === 'world' ? 'Всемирные Приключения' : 'Все Туры'}</h3>
+                
+                <div className="tour-cards-grid">
+                    {filteredTours.length > 0 ? (
+                        filteredTours.map(tour => (
+                            <TourCard key={tour.id} tour={tour} />
+                        ))
+                    ) : (
+                        <p className="no-tours-message">Туры в этой категории пока недоступны.</p>
+                    )}
+                </div>
+            </div>
+        </div>
+    );
 }
