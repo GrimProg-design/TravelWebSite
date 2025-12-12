@@ -45,7 +45,7 @@ export default function MenuSidebar({ isOpen, onClose }: MenuSidebarProps): JSX.
                 </div>
                 
                 <div className="menu-functional-section">
-                    <h4>Настройки</h4>
+                    <h4>Оценка</h4>
                     <ThemeSwitcher />
                 </div>
                 
