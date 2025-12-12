@@ -1,23 +1,41 @@
 import type { JSX } from "react";
-import "./Footer.css"
+import "./Footer.css";
 
 export default function Footer(): JSX.Element {
-    const randomLinks = Array.from({ length: 10 }, (_, i) => (
-        <li key={i}>
-            <a href={`#link-${i}`}>{i < 5 ? `Направление ${i + 1}` : `Информация ${i - 4}`}</a>
-        </li>
-    ));
+    const data = [
+        "Егор",
+        "Ilia",
+        "Ruslan",
+        "Dastan",
+        "Kto to"
+    ];
+
+    const randomLinks = Array.from({ length: 10 }, (_, i) => {
+        let label;
+
+        if (i < 5) {
+            label = `Гид ${i + 1}`;
+        } 
+        else {
+            const dataIndex = i - 5;
+            const name = data[dataIndex] ?? "Нет данных";
+            label = `${name} ${dataIndex + 1}`;
+        }
+
+        return (
+            <li key={i}>
+                <a href={`#link-${i}`}>{label}</a>
+            </li>
+        );
+    });
 
     return (
         <footer className="main-footer">
             <div className="footer-content-con">
+                
                 <div className="footer-section navigation-links">
-                    <h3>Полезные Ссылки</h3>
+                    <h3>Наши Гиды</h3>
                     <ul>
-                        <li><a href="/">Главная</a></li>
-                        <li><a href="/places">Места</a></li>
-                        <li><a href="/bilets">Билеты</a></li>
-                        <li><a href="/status">Статус</a></li>
                         {randomLinks}
                     </ul>
                 </div>
@@ -39,7 +57,9 @@ export default function Footer(): JSX.Element {
                         <span>📘</span>
                     </div>
                 </div>
+
             </div>
+
             <div className="footer-bottom">
                 <p>&copy; {new Date().getFullYear()} Tour.KG. Все права защищены.</p>
             </div>

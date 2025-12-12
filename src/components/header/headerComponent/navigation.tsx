@@ -3,15 +3,24 @@ import { useLocation } from "react-router-dom";
 import "../headerStyle/navigation.css"
 import Buttons from "./Buttons";
 
-const navLinks = [
-  { path: "/", text: "Главная" },
-  { path: "/status", text: "Статус поездки" },
-  { path: "/bilets", text: "Купить билеты" },
-  { path: "/places", text: "Места" },
+import { useLanguage } from "../../../contexts/LanguageContext";
+import type { TranslationKeys } from "../../../i18n/translations";
+
+interface NavLink {
+    path: string;
+    textKey: TranslationKeys;
+}
+
+const navLinks: NavLink[] = [
+  { path: "/", textKey: "home_link" },
+  { path: "/status", textKey: "status_link" },
+  { path: "/bilets", textKey: "tickets_link" },
+  { path: "/places", textKey: "places_link" },
 ];
 
 export default function Navigation(): JSX.Element {
-  const location = useLocation(); 
+  const location = useLocation();
+  const { t } = useLanguage();
 
   return (
     <nav>
@@ -19,7 +28,7 @@ export default function Navigation(): JSX.Element {
         <Buttons
           key={link.path}
           path={link.path}
-          text={link.text}
+          text={t(link.textKey)}
           isActive={location.pathname === link.path}
         />
       ))}

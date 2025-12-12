@@ -3,12 +3,19 @@ import { Link } from "react-router-dom";
 import LanguageSelector from "./LanguageSelector.tsx";
 import ThemeSwitcher from "./ThemeSwitcher.tsx";
 import "./MenuSidebar.css"
+import { useLanguage } from "../../../contexts/LanguageContext";
+import type { TranslationKeys } from "../../../i18n/translations";
 
-const navLinks = [
-    { path: "/", text: "Главная" },
-    { path: "/status", text: "Статус поездки" },
-    { path: "/bilets", text: "Купить билеты" },
-    { path: "/places", text: "Места" },
+interface NavLink {
+    path: string;
+    textKey: TranslationKeys;
+}
+
+const navLinks: NavLink[] = [
+    { path: "/", textKey: "home_link" },
+    { path: "/status", textKey: "status_link" },
+    { path: "/bilets", textKey: "tickets_link" },
+    { path: "/places", textKey: "places_link" },
 ];
 
 interface MenuSidebarProps {
@@ -17,6 +24,8 @@ interface MenuSidebarProps {
 }
 
 export default function MenuSidebar({ isOpen, onClose }: MenuSidebarProps): JSX.Element {
+    const { t } = useLanguage();
+
     return (
         <>
             {isOpen && <div className="menu-overlay" onClick={onClose}></div>}
@@ -32,7 +41,7 @@ export default function MenuSidebar({ isOpen, onClose }: MenuSidebarProps): JSX.
                             to={link.path}
                             onClick={onClose}
                         >
-                            {link.text}
+                            {t(link.textKey)}
                         </Link>
                     ))}
                 </nav>
@@ -40,17 +49,17 @@ export default function MenuSidebar({ isOpen, onClose }: MenuSidebarProps): JSX.
                 <hr className="menu-divider" />
 
                 <div className="menu-functional-section">
-                    <h4>Язык</h4>
+                    <h4>{t('language_header')}</h4>
                     <LanguageSelector />
                 </div>
                 
                 <div className="menu-functional-section">
-                    <h4>Оценка</h4>
+                    <h4>{t('theme_header')}</h4>
                     <ThemeSwitcher />
                 </div>
                 
                 <div className="menu-footer">
-                    <span>Tour.KG &copy; 2025</span>
+                    <span>{t('footer_text')}</span>
                 </div>
             </div>
         </>

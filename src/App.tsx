@@ -10,24 +10,24 @@ import Status from "./components/body/status/Status";
 import Tickets from "./components/body/tickets/Tickets";
 import Footer from "./components/footer/Footer";
 
+import { LanguageProvider } from "./contexts/LanguageContext";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   return (
     <>
-      <Header toggleMenu={toggleMenu}/>
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/status" element={<Status/>}/>
-        <Route path="/bilets" element={<Tickets/>}/>
-        <Route path="/places" element={<Places/>}/>
-      </Routes>
-      <Footer/>
-      <MenuSidebar 
-          isOpen={isMenuOpen} 
-          onClose={toggleMenu} 
-      />
+      <LanguageProvider>
+        <Header toggleMenu={toggleMenu} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/status" element={<Status />} />
+          <Route path="/bilets" element={<Tickets />} />
+          <Route path="/places" element={<Places />} />
+        </Routes>
+        <Footer />
+        <MenuSidebar isOpen={isMenuOpen} onClose={toggleMenu} />
+      </LanguageProvider>
     </>
   );
 }

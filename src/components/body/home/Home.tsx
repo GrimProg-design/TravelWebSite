@@ -1,30 +1,35 @@
 import type { JSX } from "react";
-import QuickBookingForm from "../../quickBookingForm/QuickBookingForm"; 
-import "./Home.css"
+import QuickBookingForm from "../../quickBookingForm/QuickBookingForm";
+import "./Home.css";
+import { Link } from "react-router-dom";
+import { useLanguage } from "../../../contexts/LanguageContext";
 
 export default function Home(): JSX.Element {
-    return (
-        <main className="home-main">
-            <div className="hero-section">
-                <div className="hero-content">
-                    <h1 className="hero-title">
-                        Откройте <span className="highlight">Непознанный</span> Кыргызстан
-                    </h1>
-                    
-                    <p className="hero-description">
-                        Ваше путешествие по Тянь-Шаню начинается здесь. От величественных пиков до бирюзовых озер — выберите свой идеальный маршрут.
-                    </p>
-                    
-                    <button className="cta-button">Смотреть все туры</button>
-                </div>
+  const { t } = useLanguage();
 
-                <div className="booking-sidebar-con">
-                    <QuickBookingForm />
-                </div>
-            </div>
+  return (
+    <main className="home-main">
+      <div className="hero-section">
+        <div className="hero-content">
+          <h1 className="hero-title">
+            {t('home_title_part1')}
+            <span className="highlight">{t('home_title_part2')}</span> Кыргызстан
+          </h1>
 
-            <div className="features-section">
-            </div>
-        </main>
-    );
+          <p className="hero-description">
+            {t('home_description')}
+          </p>
+          <Link to="/places">
+            <button className="cta-button">{t('cta_button_text')}</button>
+          </Link>
+        </div>
+
+        <div className="booking-sidebar-con">
+          <QuickBookingForm />
+        </div>
+      </div>
+
+      <div className="features-section"></div>
+    </main>
+  );
 }

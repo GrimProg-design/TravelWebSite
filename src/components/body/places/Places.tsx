@@ -7,10 +7,10 @@ import { useState } from "react";
 import "./Places.css"
 
 const tourData = [
-    { id: 'kg1', name: 'Иссык-Куль: Жемчужина Тянь-Шаня', category: 'kyrgyzstan', description: 'Самое большое и красивое озеро. Идеально для летнего отдыха.', imageUrl: 'issyk_kul.jpg' },
-    { id: 'kg2', name: 'Ущелье Ала-Арча: Альпийские Луга', category: 'kyrgyzstan', description: 'Высокогорный национальный парк, доступный из Бишкека.', imageUrl: 'ala_archa.jpg' },
-    { id: 'w1', name: 'Мачу-Пикчу: Город Инков', category: 'world', description: 'Исторический памятник, затерянный в облаках Анд.', imageUrl: 'machu_picchu.jpg' },
-    { id: 'w2', name: 'Исландия: Северное Сияние', category: 'world', description: 'Путешествие по вулканам, гейзерам и ледникам.', imageUrl: 'iceland.jpg' },
+    { id: 'kg1', name: 'Иссык-Куль: Жемчужина Тянь-Шаня', category: 'kyrgyzstan', description: 'Самое большое и красивое озеро. Идеально для летнего отдыха.', imageUrl: 'src/assets/issyk_kul.jpeg' },
+    { id: 'kg2', name: 'Ущелье Ала-Арча: Альпийские Луга', category: 'kyrgyzstan', description: 'Высокогорный национальный парк, доступный из Бишкека.', imageUrl: 'src/assets/ala_archa.jpeg' },
+    { id: 'w1', name: 'Мачу-Пикчу: Город Инков', category: 'world', description: 'Исторический памятник, затерянный в облаках Анд.', imageUrl: 'src/assets/machu_pickchu.jpeg' },
+    { id: 'w2', name: 'Исландия: Северное Сияние', category: 'world', description: 'Путешествие по вулканам, гейзерам и ледникам.', imageUrl: 'src/assets/south_light.jpeg' },
 ];
 
 export default function Places(): JSX.Element {
