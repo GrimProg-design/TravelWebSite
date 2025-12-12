@@ -1,5 +1,6 @@
 import type { JSX } from "react";
 import "./QuickBookingForm.css";
+import { Link } from "react-router-dom";
 
 export default function QuickBookingForm(): JSX.Element {
   return (
@@ -33,9 +34,11 @@ export default function QuickBookingForm(): JSX.Element {
           />
         </div>
 
-        <button type="submit" className="booking-submit-btn">
-          Найти Туры
-        </button>
+        <Link className="submit-btn" to="/places">
+          <button type="submit" className="booking-submit-btn">
+            Найти Туры
+          </button>
+        </Link>
       </form>
     </div>
   );
