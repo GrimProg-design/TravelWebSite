@@ -1,7 +1,10 @@
 import type { JSX } from "react";
 import "./Footer.css";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 export default function Footer(): JSX.Element {
+    const { t } = useLanguage();
+
     const data = [
         "Егор",
         "Ilia",
@@ -14,11 +17,11 @@ export default function Footer(): JSX.Element {
         let label;
 
         if (i < 5) {
-            label = `Гид ${i + 1}`;
+            label = `${t('footer_guide_prefix')} ${i + 1}`;
         } 
         else {
             const dataIndex = i - 5;
-            const name = data[dataIndex] ?? "Нет данных";
+            const name = data[dataIndex] ?? t('footer_no_data');
             label = `${name} ${dataIndex + 1}`;
         }
 
@@ -34,23 +37,23 @@ export default function Footer(): JSX.Element {
             <div className="footer-content-con">
                 
                 <div className="footer-section navigation-links">
-                    <h3>Наши Гиды</h3>
+                    <h3>{t('footer_guides_header')}</h3>
                     <ul>
                         {randomLinks}
                     </ul>
                 </div>
 
                 <div className="footer-section contacts">
-                    <h3>Свяжитесь с Нами</h3>
+                    <h3>{t('footer_contacts_header')}</h3>
                     <p>+996 (777) 123 456</p>
                     <p>+996 (555) 789 012</p>
                     <p>info@tour.kg</p>
-                    <p>Бишкек, Кыргызстан</p>
+                    <p>{t('footer_no_data')}</p>
                 </div>
 
                 <div className="footer-section branding-social">
                     <h2>Tour.KG</h2>
-                    <p className="tagline">Исследуйте сердце Тянь-Шаня</p>
+                    <p className="tagline">{t('footer_tagline')}</p>
                     <div className="social-icons">
                         <span>🌐</span>
                         <span>📸</span>
@@ -61,7 +64,7 @@ export default function Footer(): JSX.Element {
             </div>
 
             <div className="footer-bottom">
-                <p>&copy; {new Date().getFullYear()} Tour.KG. Все права защищены.</p>
+                <p>&copy; {new Date().getFullYear()} Tour.KG. {t('footer_all_rights_reserved')}</p>
             </div>
         </footer>
     );

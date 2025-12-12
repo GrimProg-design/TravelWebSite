@@ -1,12 +1,11 @@
-// В components/body/tickets/TicketsComponent/TourSelection.tsx
-
 import type { JSX } from "react";
 import "./TourSelection.css"
+import { useLanguage } from "../../../contexts/LanguageContext";
 
 interface Tour {
     id: string;
     name: string;
-    price: number; // Цена в USD или другом эквиваленте
+    price: number;
 }
 
 interface TourSelectionProps {
@@ -15,9 +14,11 @@ interface TourSelectionProps {
 }
 
 export default function TourSelection({ tours, onSelect }: TourSelectionProps): JSX.Element {
+    const { t } = useLanguage();
+
     return (
         <div className="tour-selection-con">
-            <h3 className="stage-header">1. Выберите желаемое направление</h3>
+            <h3 className="stage-header">{t('tour_stage_header')}</h3>
             
             <div className="tour-list-grid">
                 {tours.map((tour) => (
@@ -25,19 +26,19 @@ export default function TourSelection({ tours, onSelect }: TourSelectionProps): 
                         <div className="tour-info">
                             <h4 className="tour-name">{tour.name}</h4>
                             <p className="tour-price">
-                                Цена от: <span className="price-value">${tour.price}</span>
+                                {t('tour_price_prefix')} <span className="price-value">${tour.price}</span>
                             </p>
                         </div>
                         <button 
                             className="action-btn"
                             onClick={() => onSelect(tour.id)}
                         >
-                            Выбрать Тур
+                            {t('tour_select_btn')}
                         </button>
                     </div>
                 ))}
             </div>
-            <p className="hint-text">Все туры включают гида и проживание в юрточных лагерях.</p>
+            <p className="hint-text">{t('tour_hint_text')}</p>
         </div>
     );
 }
