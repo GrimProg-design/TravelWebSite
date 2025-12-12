@@ -13,7 +13,7 @@ export default function Home(): JSX.Element {
         <div className="hero-content">
           <h1 className="hero-title">
             {t('home_title_part1')}
-            <span className="highlight">{t('home_title_part2')}</span> Кыргызстан
+            <span className="highlight">{t('home_title_part2')}</span> {t('country')}
           </h1>
 
           <p className="hero-description">

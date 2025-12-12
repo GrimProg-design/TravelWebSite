@@ -1,6 +1,7 @@
 // src/i18n/translations.ts (Обновленная версия)
 
 export type TranslationKeys =
+  | "country"
   | "site_title"
   | "welcome_message"
   | "buy_button"
@@ -106,6 +107,7 @@ export const resources = {
     // Главная страница (Home)
     home_title_part1: "Откройте ",
     home_title_part2: "Непознанный",
+    country: "Кыргызстан",
     home_description:
       "Ваше путешествие по Тянь-Шаню начинается здесь. От величественных пиков до бирюзовых озер — выберите свой идеальный маршрут.",
     cta_button_text: "Смотреть все туры",
@@ -206,6 +208,7 @@ export const resources = {
     // Главная страница (Home)
     home_title_part1: "Discover ",
     home_title_part2: "Unexplored",
+    country: "Kyrgyzstan",
     home_description:
       "Your journey across the Tian Shan begins here. From majestic peaks to turquoise lakes—choose your perfect route.",
     cta_button_text: "View all tours",
@@ -309,6 +312,7 @@ export const resources = {
     // Главная страница (Home)
     home_title_part1: "Ачыңыз ",
     home_title_part2: "Изделбеген",
+    country: "Кыргызстан",
     home_description:
       "Сиздин Теңир-Тоо боюнча сапарыңыз бул жерден башталат. Улуу чокулардан бирюза көлдөрүнө чейин — өзүңүздүн идеалдуу маршрутуңузду тандаңыз.",
     cta_button_text: "Бардык турларды көрүү",

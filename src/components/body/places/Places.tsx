@@ -17,6 +17,7 @@ export default function Places(): JSX.Element {
       category: "kyrgyzstan",
       description: t("tour_data_kg1_desc"),
       imageUrl: "src/assets/issyk_kul.jpeg",
+      url: "https://ru.wikipedia.org/wiki/%D0%98%D1%81%D1%81%D1%8B%D0%BA-%D0%9A%D1%83%D0%BB%D1%8C",
     },
     {
       id: "kg2",
@@ -24,6 +25,7 @@ export default function Places(): JSX.Element {
       category: "kyrgyzstan",
       description: t("tour_data_kg2_desc"),
       imageUrl: "src/assets/ala_archa.jpeg",
+      url: "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B0-%D0%90%D1%80%D1%87%D0%B0_(%D0%BD%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BF%D0%B0%D1%80%D0%BA)"
     },
     {
       id: "w1",
@@ -31,6 +33,7 @@ export default function Places(): JSX.Element {
       category: "world",
       description: t("tour_data_w1_desc"),
       imageUrl: "src/assets/machu_pickchu.jpeg",
+      url: "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%87%D1%83-%D0%9F%D0%B8%D0%BA%D1%87%D1%83",
     },
     {
       id: "w2",
@@ -38,6 +41,7 @@ export default function Places(): JSX.Element {
       category: "world",
       description: t("tour_data_w2_desc"),
       imageUrl: "src/assets/south_light.jpeg",
+      url: "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D1%8F%D1%80%D0%BD%D0%BE%D0%B5_%D1%81%D0%B8%D1%8F%D0%BD%D0%B8%D0%B5"
     },
   ];
 
@@ -45,7 +49,6 @@ export default function Places(): JSX.Element {
     filter === "all" ? true : tour.category === filter
   );
 
-  // Динамический заголовок секции
   const getSectionHeader = () => {
     if (filter === "kyrgyzstan") return t("header_kyrgyzstan");
     if (filter === "world") return t("header_world");
@@ -81,7 +84,7 @@ export default function Places(): JSX.Element {
 
         <div className="tour-cards-grid">
           {filteredTours.length > 0 ? (
-            filteredTours.map((tour) => <TourCard key={tour.id} tour={tour} />)
+            filteredTours.map((tour) => <TourCard key={tour.id} tour={tour}/>)
           ) : (
             <p className="no-tours-message">{t("no_tours_message")}</p>
           )}
