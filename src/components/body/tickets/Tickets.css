@@ -1,5 +1,3 @@
-/* В Tickets.css */
-
 .tickets-page-con {
     padding: 50px 80px;
     max-width: 1400px;
@@ -13,7 +11,6 @@
     color: #fff;
 }
 
-/* Переиспользуем стиль Glassmorphism карточки с прошлой страницы */
 .booking-process-con.status-card-glass {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
@@ -22,12 +19,11 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
     padding: 40px;
-    min-height: 600px; /* Чтобы секции не прыгали */
+    min-height: 600px;
     position: relative;
-    overflow: hidden; /* Важно для анимации улетающего транспорта */
+    overflow: hidden;
 }
 
-/* Стили для кнопок (переиспользование стилей с Home/Status) */
 .action-btn, .tour-item button, .checkout-message button {
     background-color: #f7a94d;
     color: #0a192f;
