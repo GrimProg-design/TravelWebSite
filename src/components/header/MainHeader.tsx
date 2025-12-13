@@ -1,7 +1,7 @@
 import type { JSX } from "react";
 import "./Header.css";
-import Navigation from "./headerComponent/Navigation";
-import BurgerMenu from "./headerComponent/BurgerMenu";
+import Navigation from "./headerComponent/Navigation.tsx";
+import BurgerMenu from "./headerComponent/BurgerMenu.tsx";
 
 export default function Header({ toggleMenu }: { toggleMenu: () => void }): JSX.Element {
   return (
