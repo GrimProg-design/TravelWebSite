@@ -1,5 +1,3 @@
-/* В Tickets.css или TransportSelection.css */
-
 .tour-summary {
     font-size: 1.2em;
     margin-bottom: 30px;
@@ -24,8 +22,6 @@
     border-radius: 15px;
     cursor: pointer;
     text-align: center;
-    
-    /* Стили Glassmorphism */
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.15);
     transition: all 0.3s ease;
@@ -34,7 +30,7 @@
 
 .transport-option:hover {
     transform: translateY(-5px);
-    background: rgba(77, 194, 247, 0.1); /* Легкий синий акцент при наведении */
+    background: rgba(77, 194, 247, 0.1);
     border: 1px solid #4dc2f7;
 }
 
