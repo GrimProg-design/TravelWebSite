@@ -65,6 +65,7 @@ export default function Footer(): JSX.Element {
 
             <div className="footer-bottom">
                 <p>&copy; {new Date().getFullYear()} Tour.KG. {t('footer_all_rights_reserved')}</p>
+                <p>(данный проект является учебным и не комерческим)</p>
             </div>
         </footer>
     );
