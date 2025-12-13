@@ -83,7 +83,21 @@ export type TranslationKeys =
   | "tour_data_w2_desc"
   | "filter_label_all"
   | "filter_label_kyrgyzstan"
-  | "filter_label_world";
+  | "filter_label_world"
+  | "status_page_title"
+  | "status_card_header"
+  | "status_label_dest"
+  | "status_label_date"
+  | "status_label_participants"
+  | "status_label_guide"
+  | "status_label_time_remaining"
+  | "status_progress_text_part1"
+  | "status_progress_text_part2"
+  | "status_download_btn"
+  | "status_mock_destination"
+  | "status_mock_date"
+  | "status_mock_guide"
+  | "status_mock_participants_suffix";
 
 export type LanguageCode = "ru" | "en" | "kg";
 
@@ -188,6 +202,23 @@ export const resources = {
     filter_label_all: "Все Туры",
     filter_label_kyrgyzstan: "Кыргызстан",
     filter_label_world: "Всемирные",
+    // Страница статуса (Status)
+    status_page_title: "Ваш Статус Бронирования",
+    status_card_header: "Поездка подтверждена!",
+    status_label_dest: "Направление:",
+    status_label_date: "Дата отправления:",
+    status_label_participants: "Участники:",
+    status_label_guide: "Ваш Гид:",
+    status_label_time_remaining: "Время до отправления:",
+    status_progress_text_part1: "Осталось",
+    status_progress_text_part2:
+      "% времени до вашего незабываемого приключения!",
+    status_download_btn: "Скачать Билеты / Маршрут",
+    // Имитация данных (Mock Data)
+    status_mock_destination: "Озеро Сон-Куль (Лазурная Сказка)",
+    status_mock_date: "20 Июня 2026",
+    status_mock_guide: "Айбек Мамытов",
+    status_mock_participants_suffix: "человек",
   },
   en: {
     site_title: "Demo Website",
@@ -292,6 +323,22 @@ export const resources = {
     filter_label_all: "All Tours",
     filter_label_kyrgyzstan: "Kyrgyzstan",
     filter_label_world: "Worldwide",
+    // Страница статуса (Status)
+    status_page_title: "Your Booking Status",
+    status_card_header: "Trip confirmed!",
+    status_label_dest: "Destination:",
+    status_label_date: "Departure Date:",
+    status_label_participants: "Participants:",
+    status_label_guide: "Your Guide:",
+    status_label_time_remaining: "Time until departure:",
+    status_progress_text_part1: "Remaining",
+    status_progress_text_part2: "% of time until your unforgettable adventure!",
+    status_download_btn: "Download Tickets / Itinerary",
+    // Имитация данных (Mock Data)
+    status_mock_destination: "Song-Kul Lake (Azure Fairy Tale)",
+    status_mock_date: "June 20, 2026",
+    status_mock_guide: "Aibek Mamytov",
+    status_mock_participants_suffix: "people",
   },
   kg: {
     site_title: "Демо-сайт",
@@ -392,6 +439,22 @@ export const resources = {
     filter_label_all: "Бардык турлар",
     filter_label_kyrgyzstan: "Кыргызстан",
     filter_label_world: "Дүйнөлүк",
+    // Страница статуса (Status)
+    status_page_title: "Сиздин брондоо статусуңуз",
+    status_card_header: "Сапар тастыкталды!",
+    status_label_dest: "Багыты:",
+    status_label_date: "Жөнөө күнү:",
+    status_label_participants: "Катышуучулар:",
+    status_label_guide: "Сиздин гид:",
+    status_label_time_remaining: "Жөнөөгө чейинки убакыт:",
+    status_progress_text_part1: "Калды",
+    status_progress_text_part2: "% убакыт унутулгус укмуштуу окуяңызга чейин!",
+    status_download_btn: "Билеттерди / Маршрутту жүктөп алуу",
+    // Имитация данных (Mock Data)
+    status_mock_destination: "Соң-Көл (Асман жомогу)",
+    status_mock_date: "20 Июнь 2026",
+    status_mock_guide: "Айбек Мамытов",
+    status_mock_participants_suffix: "адам",
   },
 } as const;
 

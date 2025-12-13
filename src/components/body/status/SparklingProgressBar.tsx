@@ -1,11 +1,9 @@
-// В components/body/status/SparklingProgressBar.tsx
-
 import type { JSX } from "react";
 
 import "./SparklingProgressBar.css"
 
 interface SparklingProgressBarProps {
-    progress: number; // Прогресс в процентах (0-100)
+    progress: number;
 }
 
 export default function SparklingProgressBar({ progress }: SparklingProgressBarProps): JSX.Element {
@@ -15,7 +13,6 @@ export default function SparklingProgressBar({ progress }: SparklingProgressBarP
                 className="progress-bar-fill" 
                 style={{ width: `${progress}%` }}
             >
-                {/* Имитация искры/звезды в конце заполнения */}
                 <div className="sparkle-end"></div>
             </div>
         </div>

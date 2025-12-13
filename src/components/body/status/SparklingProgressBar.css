@@ -1,12 +1,9 @@
-/* В Status.css или отдельном SparklingProgressBar.css */
-
 .progress-bar-container {
     width: 100%;
     height: 20px;
-    background-color: rgba(255, 255, 255, 0.1); /* Фон полосы */
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     overflow: hidden;
-    /* Легкая тень для контейнера */
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -14,21 +11,12 @@
     height: 100%;
     position: relative;
     border-radius: 10px;
-    
-    /* === ИСКРЯЩИЙСЯ ГРАДИЕНТ === */
-    /* Основа - бирюзовый */
     background: linear-gradient(to right, #4dc2f7, #19a0d9); 
-    
-    /* Блеск/Искрящаяся анимация */
     box-shadow: 0 0 10px #4dc2f7, 0 0 20px rgba(77, 194, 247, 0.5);
-    
-    /* Анимация движения градиента (имитация блеска) */
     animation: sparkle-move 4s linear infinite;
-    
-    transition: width 1s ease-out; /* Плавное изменение прогресса */
+    transition: width 1s ease-out;
 }
 
-/* Ключевые кадры для движения "искры" (полосы блеска) */
 @keyframes sparkle-move {
     0% {
         filter: hue-rotate(0deg);
@@ -37,18 +25,17 @@
                 transparent 0%, 
                 #fff 50%, 
                 transparent 100%
-            ), /* Добавление горизонтального блика */
+            ),
             linear-gradient(to right, #4dc2f7, #19a0d9); 
         background-size: 100% 100%, 100% 100%;
-        background-position: -200px 0, 0 0; /* Начало блика слева */
+        background-position: -200px 0, 0 0;
     }
     100% {
         filter: hue-rotate(360deg);
-        background-position: 200px 0, 0 0; /* Конец блика справа */
+        background-position: 200px 0, 0 0;
     }
 }
 
-/* Имитация искры на конце ползунка */
 .sparkle-end {
     position: absolute;
     right: -5px;
@@ -58,8 +45,8 @@
     height: 10px;
     border-radius: 50%;
     background-color: #fff;
-    box-shadow: 0 0 15px 5px #fff, 0 0 20px 8px #f7a94d; /* Белый и золотой ореол */
-    animation: pulse 1.5s infinite alternate; /* Анимация пульсации */
+    box-shadow: 0 0 15px 5px #fff, 0 0 20px 8px #f7a94d;
+    animation: pulse 1.5s infinite alternate;
 }
 
 @keyframes pulse {
