@@ -1,14 +1,14 @@
 import type { JSX } from "react";
 import { useLocation } from "react-router-dom";
-import "../headerStyle/navigation.css"
+import "../headerStyle/navigation.css";
 import Buttons from "./Buttons";
 
-import { useLanguage } from "../../../contexts/LanguageContext";
+import { useLanguage } from "../../../contexts/useLanguage";
 import type { TranslationKeys } from "../../../i18n/translations";
 
 interface NavLink {
-    path: string;
-    textKey: TranslationKeys;
+  path: string;
+  textKey: TranslationKeys;
 }
 
 const navLinks: NavLink[] = [

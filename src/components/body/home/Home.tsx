@@ -2,7 +2,7 @@ import type { JSX } from "react";
 import QuickBookingForm from "../../quickBookingForm/QuickBookingForm";
 import "./Home.css";
 import { Link } from "react-router-dom";
-import { useLanguage } from "../../../contexts/LanguageContext";
+import { useLanguage } from "../../../contexts/useLanguage";
 
 export default function Home(): JSX.Element {
   const { t } = useLanguage();
@@ -12,15 +12,14 @@ export default function Home(): JSX.Element {
       <div className="hero-section">
         <div className="hero-content">
           <h1 className="hero-title">
-            {t('home_title_part1')}
-            <span className="highlight">{t('home_title_part2')}</span> {t('country')}
+            {t("home_title_part1")}
+            <span className="highlight">{t("home_title_part2")}</span>{" "}
+            {t("country")}
           </h1>
 
-          <p className="hero-description">
-            {t('home_description')}
-          </p>
+          <p className="hero-description">{t("home_description")}</p>
           <Link to="/places">
-            <button className="cta-button">{t('cta_button_text')}</button>
+            <button className="cta-button">{t("cta_button_text")}</button>
           </Link>
         </div>
 

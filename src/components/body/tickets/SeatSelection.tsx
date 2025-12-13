@@ -1,7 +1,7 @@
 import type { JSX } from "react";
 import { useState } from "react";
 import "./SeatSelection.css";
-import { useLanguage } from "../../../contexts/LanguageContext";
+import { useLanguage } from "../../../contexts/useLanguage";
 
 interface SeatSelectionProps {
   transportType: "plane" | "train";

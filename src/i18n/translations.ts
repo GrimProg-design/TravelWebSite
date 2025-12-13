@@ -458,4 +458,4 @@ export const resources = {
   },
 } as const;
 
-export type Translations = (typeof resources)["ru"];
+export type Translations = typeof resources[LanguageCode];

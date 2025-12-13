@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 import "./TourCard.css";
-import { useLanguage } from "../../../contexts/LanguageContext";
+import { useLanguage } from "../../../contexts/useLanguage";
 
 interface Tour {
   id: string;

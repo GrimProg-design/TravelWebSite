@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 import "./CategoryFilter.css";
-import { useLanguage } from "../../../contexts/LanguageContext";
+import { useLanguage } from "../../../contexts/useLanguage";
 import type { TranslationKeys } from "../../../i18n/translations";
 
 type FilterType = "all" | "kyrgyzstan" | "world";
