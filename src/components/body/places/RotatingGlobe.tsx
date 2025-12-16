@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import WorldWind from "worldwindjs";
 
 export default function RotatingGlobe() {
   const globeRef = useRef<HTMLCanvasElement | null>(null);
@@ -8,6 +7,12 @@ export default function RotatingGlobe() {
     if (!globeRef.current) return;
 
     requestAnimationFrame(() => {
+      const WorldWind = (window as any).WorldWind;
+      if (!WorldWind) {
+        console.error("WorldWind not loaded");
+        return;
+      }
+
       WorldWind.configuration.baseUrl = "/worldwind/";
       const wwd = new WorldWind.WorldWindow(globeRef.current);
 
