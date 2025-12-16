@@ -1,3 +1,8 @@
+// Полифиллы для Vercel
+if (typeof (globalThis as any).global === 'undefined') {
+  (globalThis as any).global = globalThis;
+}
+
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
