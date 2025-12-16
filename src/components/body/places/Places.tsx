@@ -1,5 +1,4 @@
 import type { JSX } from "react";
-import RotatingGlobe from "./RotatingGlobe";
 import TourCard from "./TourCard";
 import CategoryFilter from "./CategoryFilter";
 import { useState } from "react";
@@ -64,13 +63,6 @@ export default function Places(): JSX.Element {
       <h2 className="page-title">{t("places_page_title")}</h2>
 
       <div className="top-section-layout">
-        <div className="globe-container">
-          <RotatingGlobe />
-          <p className="globe-hint">
-            <span className="highlight-hint">🌎</span>
-            {t("places_hint")}
-          </p>
-        </div>
 
         <div className="filter-and-intro">
           <h3 className="section-intro-title">{t("places_intro_title")}</h3>
