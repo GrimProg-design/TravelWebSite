@@ -5,6 +5,10 @@ import CategoryFilter from "./CategoryFilter";
 import { useState } from "react";
 import "./Places.css";
 import { useLanguage } from "../../../contexts/useLanguage";
+import issykKulImg from "../../../assets/issyk_kul.jpeg";
+import alaArchaImg from "../../../assets/ala_archa.jpeg";
+import machuPicchuImg from "../../../assets/machu_pickchu.jpeg";
+import southLightImg from "../../../assets/south_light.jpeg";
 
 export default function Places(): JSX.Element {
   const { t } = useLanguage();
@@ -16,7 +20,7 @@ export default function Places(): JSX.Element {
       name: t("tour_data_kg1_name"),
       category: "kyrgyzstan",
       description: t("tour_data_kg1_desc"),
-      imageUrl: "src/assets/issyk_kul.jpeg",
+      imageUrl: issykKulImg,
       url: "https://ru.wikipedia.org/wiki/%D0%98%D1%81%D1%81%D1%8B%D0%BA-%D0%9A%D1%83%D0%BB%D1%8C",
     },
     {
@@ -24,7 +28,7 @@ export default function Places(): JSX.Element {
       name: t("tour_data_kg2_name"),
       category: "kyrgyzstan",
       description: t("tour_data_kg2_desc"),
-      imageUrl: "src/assets/ala_archa.jpeg",
+      imageUrl: alaArchaImg,
       url: "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B0-%D0%90%D1%80%D1%87%D0%B0_(%D0%BD%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BF%D0%B0%D1%80%D0%BA)",
     },
     {
@@ -32,7 +36,7 @@ export default function Places(): JSX.Element {
       name: t("tour_data_w1_name"),
       category: "world",
       description: t("tour_data_w1_desc"),
-      imageUrl: "src/assets/machu_pickchu.jpeg",
+      imageUrl: machuPicchuImg,
       url: "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%87%D1%83-%D0%9F%D0%B8%D0%BA%D1%87%D1%83",
     },
     {
@@ -40,7 +44,7 @@ export default function Places(): JSX.Element {
       name: t("tour_data_w2_name"),
       category: "world",
       description: t("tour_data_w2_desc"),
-      imageUrl: "src/assets/south_light.jpeg",
+      imageUrl: southLightImg,
       url: "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D1%8F%D1%80%D0%BD%D0%BE%D0%B5_%D1%81%D0%B8%D1%8F%D0%BD%D0%B8%D0%B5",
     },
   ];

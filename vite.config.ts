@@ -1,22 +1,30 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { nodePolyfills } from "vite-plugin-node-polyfills";
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    nodePolyfills({
+      include: ["buffer", "process"],
+      globals: {
+        Buffer: true,
+        global: true,
+        process: true,
+      },
+    }),
+  ],
 
   optimizeDeps: {
+    include: ["worldwindjs"],
     esbuildOptions: {
       define: {
         global: "globalThis",
       },
     },
-    exclude: ["worldwindjs"],
   },
 
   build: {
-    rollupOptions: {
-      external: ["worldwindjs"],
-    },
     commonjsOptions: {
       transformMixedEsModules: true,
     },
